@@ -27,7 +27,7 @@ function Contact({ isDarkMode, isLoading, submitStatus, formData, handleInputCha
                     Get In Touch
                 </motion.h2>
                 <motion.p
-                    className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}
+                    className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -92,7 +92,7 @@ function Contact({ isDarkMode, isLoading, submitStatus, formData, handleInputCha
                                             ) : (
                                                 <span className="text-cyan-500 font-medium block">{item.value}</span>
                                             )}
-                                            <p className={`text-sm mt-1 ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>{item.description}</p>
+                                            <p className={`text-sm mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}>{item.description}</p>
                                         </div>
                                     </div>
                                 </motion.div>

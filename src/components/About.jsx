@@ -32,16 +32,16 @@ function About({ isDarkMode, aboutRef }) {
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl blur opacity-75"></div>
                             <div className={`relative ${isDarkMode ? 'bg-slate-900' : 'bg-white'} rounded-2xl p-8 text-center`}>
-                                <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-500">
+                                <div className="w-68 h-68 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-500">
                                     <img
-                                        src="/professional-photo.jpg"
+                                        src="/causal.jpg"
                                         alt="Jagdish Everest - Professional Photo"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-2">Jagdish Everest</h3>
                                 <p className="text-cyan-500 font-semibold mb-4">Full Stack Developer</p>
-                                <div className={`space-y-2 text-sm ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
+                                <div className={`space-y-2 text-sm ${isDarkMode ? 'text-gray-500' : 'text-gray-800'}`}>
                                     <div className="flex items-center justify-center">
                                         <FaGraduationCap className="mr-2 text-cyan-500" />
                                         <span>B.E. Computer Science</span>

@@ -112,7 +112,7 @@ function Projects({ isDarkMode, projectsRef }) {
                     Featured Projects
                 </motion.h2>
                 <motion.p
-                    className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}
+                    className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -126,7 +126,7 @@ function Projects({ isDarkMode, projectsRef }) {
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
-                            className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-white border-gray-200 hover:bg-gray-50'} border rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 group hover:scale-105`}
+                            className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-white border-gray-200 hover:bg-gray-50'} border rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 group hover:scale-105 flex flex-col h-[600px]`}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 * index }}
@@ -149,13 +149,13 @@ function Projects({ isDarkMode, projectsRef }) {
                             <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-500 transition-colors">
                                 {project.name}
                             </h3>
-                            <p className={`mb-4 leading-relaxed ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
+                            <p className={`mb-4 leading-relaxed text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-800'} line-clamp-3`}>
                                 {project.description}
                             </p>
 
-                            <div className="mb-4">
+                            <div className="mb-4 flex-grow">
                                 <p className="font-semibold text-cyan-500 mb-2">Technologies:</p>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-2 mb-4">
                                     {project.technologies.map((tech, techIndex) => (
                                         <span
                                             key={techIndex}
@@ -165,18 +165,18 @@ function Projects({ isDarkMode, projectsRef }) {
                                         </span>
                                     ))}
                                 </div>
-                            </div>
 
-                            <div className="mb-6">
-                                <p className="font-semibold text-purple-500 mb-2">Key Features:</p>
-                                <ul className={`text-sm space-y-1 ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
-                                    {project.features.map((feature, featureIndex) => (
-                                        <li key={featureIndex} className="flex items-start">
-                                            <span className="text-cyan-500 mr-2 mt-1">•</span>
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div className="mb-6">
+                                    <p className="font-semibold text-purple-500 mb-2">Key Features:</p>
+                                    <ul className={`text-sm space-y-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}>
+                                        {project.features.slice(0, 4).map((feature, featureIndex) => (
+                                            <li key={featureIndex} className="flex items-center">
+                                                <span className="text-cyan-500 mr-3 text-lg leading-none">•</span>
+                                                <span className="text-sm leading-relaxed">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
 
                             <motion.a

@@ -175,7 +175,7 @@ const Portfolio = () => {
             {/* Footer */}
             <footer className={`${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-gray-50 border-gray-200'} border-t py-8 px-4`}>
                 <div className="max-w-6xl mx-auto text-center">
-                    <p className={isDarkMode ? 'text-gray-700' : 'text-gray-800'}>
+                    <p className={isDarkMode ? 'text-gray-400' : 'text-gray-800'}>
                         © 2025 Jagdish Everest. Built with React, Tailwind CSS, and lots of ☕
                     </p>
                 </div>

@@ -24,21 +24,21 @@ import {
 function Skill({ isDarkMode }) {
 
     const skills = [
-        { name: "Java", icon: <FaJava className="text-orange-500 text-3xl" />, level: 90 },
-        { name: "Spring Boot", icon: <SiSpringboot className="text-green-500 text-3xl" />, level: 85 },
-        { name: "SQL", icon: <FaDatabase className="text-blue-500 text-3xl" />, level: 80 },
-        { name: "React", icon: <SiReact className="text-blue-400 text-3xl" />, level: 80 },
-        { name: "JavaScript", icon: <SiJavascript className="text-cyan-500 text-3xl" />, level: 85 },
-        { name: "HTML5", icon: <SiHtml5 className="text-orange-600 text-3xl" />, level: 90 },
-        { name: "CSS3", icon: <SiCss3 className="text-blue-600 text-3xl" />, level: 85 },
-        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-500 text-3xl" />, level: 90 },
-        { name: "Dart", icon: <SiDart className="text-blue-400 text-3xl" />, level: 75 },
-        { name: "Flutter", icon: <SiFlutter className="text-blue-400 text-3xl" />, level: 75 },
-        { name: "MySQL", icon: <SiMysql className="text-blue-600 text-3xl" />, level: 85 },
-        { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700 text-3xl" />, level: 80 },
-        { name: "IntelliJ IDEA", icon: <SiIntellijidea className="text-red-500 text-3xl" />, level: 90 },
-        { name: "VS Code", icon: <FaFileCode className="text-blue-500 text-3xl" />, level: 95 },
-        { name: "Postman", icon: <SiPostman className="text-orange-600 text-3xl" />, level: 85 }
+        { name: "Java", icon: <FaJava className="text-orange-500 text-3xl size-15" />, level: 80 },
+        { name: "Spring Boot", icon: <SiSpringboot className="text-green-500 text-3xl size-15" />, level: 70 },
+        { name: "SQL", icon: <FaDatabase className="text-blue-500 text-3xl size-15" />, level: 75 },
+        { name: "React", icon: <SiReact className="text-blue-400 text-3xl size-15" />, level: 65 },
+        { name: "JavaScript", icon: <SiJavascript className="text-cyan-500 text-3xl size-15" />, level: 60 },
+        { name: "HTML5", icon: <SiHtml5 className="text-orange-600 text-3xl size-15" />, level: 70 },
+        { name: "CSS3", icon: <SiCss3 className="text-blue-600 text-3xl size-15" />, level: 60 },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-500 text-3xl size-15" />, level: 65 },
+        { name: "Dart", icon: <SiDart className="text-blue-400 text-3xl size-15" />, level: 75 },
+        { name: "Flutter", icon: <SiFlutter className="text-blue-400 text-3xl size-15" />, level: 75 },
+        { name: "MySQL", icon: <SiMysql className="text-blue-600 text-3xl size-15" />, level: 85 },
+        { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700 text-3xl size-15" />, level: 80 },
+        { name: "IntelliJ IDEA", icon: <SiIntellijidea className="text-red-500 text-3xl size-15" />, level: 70 },
+        { name: "VS Code", icon: <FaFileCode className="text-blue-500 text-3xl size-15" />, level: 70 },
+        { name: "Postman", icon: <SiPostman className="text-orange-600 text-3xl size-15" />, level: 85 }
     ];
 
 

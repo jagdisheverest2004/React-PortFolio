@@ -7,12 +7,12 @@ function Achievements({ isDarkMode, achievementsRef }) {
         {
             title: "Fortinet Certified Fundamentals in Cybersecurity",
             issuer: "Fortinet",
-            date: "2023",
+            date: "2025",
             type: "Cybersecurity Certification", 
             icon: <FaShieldAlt className="text-red-500" />,
             description: "Comprehensive certification covering cybersecurity fundamentals, network security principles, and Fortinet security solutions.",
             skills: ["Network Security", "Threat Analysis", "Security Architecture", "Incident Response"],
-            credentialId: "FCF-2023-XXXX"
+            credentialId: "FCF-2025-XXXX"
         },
         {
             title: "Programming in Java",
@@ -49,7 +49,7 @@ function Achievements({ isDarkMode, achievementsRef }) {
                         Certifications & Achievements
                     </motion.h2>
                     <motion.p 
-                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}
+                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -81,7 +81,7 @@ function Achievements({ isDarkMode, achievementsRef }) {
                                     {cert.title}
                                 </h4>
                                 <p className="text-cyan-500 font-semibold mb-3">{cert.issuer}</p>
-                                <p className={`text-sm mb-4 leading-relaxed ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
+                                <p className={`text-sm mb-4 leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}>
                                     {cert.description}
                                 </p>
 
@@ -100,7 +100,7 @@ function Achievements({ isDarkMode, achievementsRef }) {
                                 </div>
 
                                 <div className={`border-t pt-4 ${isDarkMode ? 'border-slate-600' : 'border-gray-200'}`}>
-                                    <p className={`text-xs mb-2 ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
+                                    <p className={`text-xs mb-2 ${isDarkMode ? 'text-gray-600' : 'text-gray-800'}`}>
                                         Credential ID: <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{cert.credentialId}</span>
                                     </p>
                                 </div>

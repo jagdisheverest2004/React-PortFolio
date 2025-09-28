@@ -27,6 +27,31 @@ function Education({ isDarkMode }) {
                 <div className="relative">
                     <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 to-purple-500"></div>
 
+                    {/*SSLC*/}
+                    <motion.div
+                        className="relative flex gap-6 mb-8"
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <FaGraduationCap className="text-white text-xl" />
+                        </div>
+                        <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
+                            <div className="flex justify-between items-start mb-2">
+                                <h4 className="text-xl font-bold">Secondary School Leaving Certificate</h4>
+                                <span className="text-purple-400 font-semibold">2018 - 2020</span>
+                            </div>
+                            <p className="text-cyan-400 font-semibold mb-1">Nazareth Matric Hr Sec School</p>
+                            <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Chennai, India</p>
+                            <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                Completed secondary education with a focus on core subjects including Mathematics, Science, Social Science and English.
+                                Developed a strong foundation in analytical thinking and problem-solving skills.
+                            </p>
+                        </div>
+                    </motion.div>
+                    
                     {/* Higher Secondary Education */}
                     <motion.div
                         className="relative flex gap-6 mb-8"
@@ -43,7 +68,7 @@ function Education({ isDarkMode }) {
                                 <h4 className="text-xl font-bold">Higher Secondary Education</h4>
                                 <span className="text-cyan-400 font-semibold">2020 - 2022</span>
                             </div>
-                            <p className="text-purple-400 font-semibold mb-1">Computer Science Stream</p>
+                            <p className="text-purple-400 font-semibold mb-1">Nazareth Matric Hr Sec School</p>
                             <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Chennai, India</p>
                             <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                                 Completed higher secondary education with focus on Mathematics, Physics, Chemistry, and Computer Science.
@@ -66,7 +91,7 @@ function Education({ isDarkMode }) {
                         <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
                             <div className="flex justify-between items-start mb-2">
                                 <h4 className="text-xl font-bold">Bachelor of Engineering - Computer Science</h4>
-                                <span className="text-purple-400 font-semibold">2022 - 2026</span>
+                                <span className="text-purple-400 font-semibold">2022 - Present</span>
                             </div>
                             <p className="text-cyan-400 font-semibold mb-1">R.M.K. Engineering College</p>
                             <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Chennai, India</p>
@@ -90,8 +115,8 @@ function Education({ isDarkMode }) {
                         </div>
                         <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
                             <div className="flex justify-between items-start mb-2">
-                                <h4 className="text-xl font-bold">Full Stack Development Mastery</h4>
-                                <span className="text-cyan-400 font-semibold">2023 - Present</span>
+                                <h4 className="text-xl font-bold">Admin Executive Intern - Swish Craft Innovation Pvt Ltd</h4>
+                                <span className="text-cyan-400 font-semibold">June 2024 – July 2024</span>
                             </div>
                             <p className="text-purple-400 font-semibold mb-1">Self-Learning & Professional Development</p>
                             <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Personal Growth Journey</p>
@@ -115,8 +140,8 @@ function Education({ isDarkMode }) {
                         </div>
                         <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
                             <div className="flex justify-between items-start mb-2">
-                                <h4 className="text-xl font-bold">Cybersecurity & Development Focus</h4>
-                                <span className="text-purple-400 font-semibold">2024 - Present</span>
+                                <h4 className="text-xl font-bold">Cyber Security Intern – Future Interns</h4>
+                                <span className="text-purple-400 font-semibold">June 2025 - July 2025</span>
                             </div>
                             <p className="text-cyan-400 font-semibold mb-1">Security-First Development Approach</p>
                             <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Continuous Learning & Application</p>
@@ -147,7 +172,7 @@ function Education({ isDarkMode }) {
                     Download My Resume
                     <FaPaperPlane className="text-lg group-hover:translate-x-1 transition-transform" />
                 </a>
-                <p className={`mt-4 text-sm ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
+                <p className={`mt-4 text-sm ${isDarkMode ? 'text-gray-600' : 'text-gray-800'}`}>
                     Get detailed information about my education, skills, projects, and experience
                 </p>
             </motion.div>

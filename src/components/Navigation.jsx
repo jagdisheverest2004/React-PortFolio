@@ -22,7 +22,7 @@ function Navigation({ isDarkMode, toggleTheme, activeSection, scrollToSection })
                                         ? 'bg-gradient-to-r from-cyan-400 to-purple-500 text-white'
                                         : isDarkMode
                                             ? 'text-gray-300 hover:text-white hover:bg-slate-800'
-                                            : 'text-gray-800 hover:text-gray-900 hover:bg-gray-50'
+                                            : 'text-gray-800 hover:text-gray-900 hover:bg-gray-200'
                                     }`}
                             >
                                 {section}
