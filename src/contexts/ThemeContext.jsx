@@ -31,13 +31,13 @@ export const ThemeProvider = ({ children }) => {
         isDarkMode,
         toggleTheme,
         colors: {
-            primary: isDarkMode ? '#10b981' : '#059669',
-            secondary: isDarkMode ? '#f59e0b' : '#d97706', 
-            accent: isDarkMode ? '#ef4444' : '#dc2626',
+            primary: isDarkMode ? '#06b6d4' : '#0891b2',
+            secondary: isDarkMode ? '#a855f7' : '#9333ea', 
+            accent: isDarkMode ? '#f59e0b' : '#d97706',
             background: isDarkMode ? '#0f172a' : '#f8fafc',
             surface: isDarkMode ? '#1e293b' : '#ffffff',
             text: isDarkMode ? '#f1f5f9' : '#0f172a',
-            textMuted: isDarkMode ? '#94a3b8' : '#64748b',
+            textMuted: isDarkMode ? '#94a3b8' : '#374151',
             border: isDarkMode ? '#334155' : '#e2e8f0'
         }
     };

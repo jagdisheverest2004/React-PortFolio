@@ -22,7 +22,8 @@ import {
     FaUser,
     FaComment,
     FaCheckCircle,
-    FaExclamationCircle
+    FaExclamationCircle,
+    FaDownload
 } from 'react-icons/fa';
 import { 
     SiSpringboot, 
@@ -144,7 +145,7 @@ const Portfolio = () => {
         {
             name: "Secure-Share",
             description: "A secure file-sharing system built with Java Spring Boot, implementing advanced encryption techniques including AES-256 GCM and RSA encryption to ensure complete data security during file transfers.",
-            icon: <FaShieldAlt className="text-emerald-500" />,
+            icon: <FaShieldAlt className="text-cyan-500" />,
             technologies: ["Java", "Spring Boot", "PostgreSQL", "AES-256 GCM", "RSA Encryption"],
             features: [
                 "End-to-end encryption with AES-256 GCM",
@@ -158,7 +159,7 @@ const Portfolio = () => {
         {
             name: "SPOOF-SHIELD", 
             description: "An advanced email spoofing detection system that analyzes email headers and verifies SPF, DKIM, and DMARC records to identify and prevent email spoofing attacks.",
-            icon: <FaShieldAlt className="text-amber-500" />,
+            icon: <FaShieldAlt className="text-purple-500" />,
             technologies: ["Java", "Spring Boot", "Email Security", "DNS Analysis"],
             features: [
                 "SPF record verification",
@@ -307,7 +308,7 @@ const Portfolio = () => {
             <nav className={`fixed top-0 left-0 right-0 z-50 ${isDarkMode ? 'bg-slate-900/90' : 'bg-white/90'} backdrop-blur-lg border-b ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
                 <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
                     <motion.h1 
-                        className="text-xl font-bold bg-gradient-to-r from-emerald-500 to-amber-500 bg-clip-text text-transparent"
+                        className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
                         whileHover={{ scale: 1.05 }}
                     >
                         Jagdish Everest
@@ -321,10 +322,10 @@ const Portfolio = () => {
                                     onClick={() => scrollToSection(section)}
                                     className={`px-3 py-1 rounded-md capitalize transition-all duration-300 ${
                                         activeSection === section
-                                            ? 'bg-gradient-to-r from-emerald-500 to-amber-500 text-white'
+                                            ? 'bg-gradient-to-r from-cyan-400 to-purple-500 text-white'
                                             : isDarkMode 
                                                 ? 'text-gray-300 hover:text-white hover:bg-slate-800' 
-                                                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                                                : 'text-gray-800 hover:text-gray-900 hover:bg-gray-50'
                                     }`}
                                 >
                                     {section}
@@ -334,7 +335,7 @@ const Portfolio = () => {
                         
                         <button
                             onClick={toggleTheme}
-                            className={`p-2 rounded-lg ${isDarkMode ? 'bg-slate-800 hover:bg-slate-700' : 'bg-gray-100 hover:bg-gray-200'} transition-colors duration-300`}
+                            className={`p-2 rounded-lg ${isDarkMode ? 'bg-slate-800 hover:bg-slate-700' : 'bg-gray-50 hover:bg-gray-200'} transition-colors duration-300`}
                             aria-label="Toggle theme"
                         >
                             <motion.div
@@ -358,18 +359,18 @@ const Portfolio = () => {
                         transition={{ duration: 0.8 }}
                         className="space-y-6"
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-500 via-amber-500 to-red-500 bg-clip-text text-transparent">
+                        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                             Jagdish Everest
                         </h1>
                         
                         <div className="text-2xl md:text-3xl h-12 flex items-center justify-center">
-                            <span className="font-mono text-emerald-500">
+                            <span className="font-mono text-cyan-500">
                                 {displayText}
-                                <span className="animate-pulse text-amber-500">|</span>
+                                <span className="animate-pulse text-purple-500">|</span>
                             </span>
                         </div>
 
-                        <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
                             Computer Science Student at R.M.K. Engineering College, graduating in 2026. 
                             Passionate about building secure, scalable applications and exploring the fascinating world of cybersecurity.
                         </p>
@@ -377,7 +378,7 @@ const Portfolio = () => {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <motion.button
                                 onClick={() => scrollToSection('projects')}
-                                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-amber-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
+                                className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -386,10 +387,10 @@ const Portfolio = () => {
                             
                             <motion.button
                                 onClick={() => scrollToSection('contact')}
-                                className={`px-8 py-4 border-2 border-emerald-500 font-semibold rounded-lg transition-all duration-300 ${
+                                className={`px-8 py-4 border-2 border-cyan-500 font-semibold rounded-lg transition-all duration-300 ${
                                     isDarkMode 
-                                        ? 'text-emerald-400 hover:bg-emerald-500 hover:text-white' 
-                                        : 'text-emerald-600 hover:bg-emerald-500 hover:text-white'
+                                        ? 'text-cyan-400 hover:bg-cyan-500 hover:text-white' 
+                                        : 'text-cyan-600 hover:bg-cyan-500 hover:text-white'
                                 }`}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -405,7 +406,7 @@ const Portfolio = () => {
             <section id="about" ref={aboutRef} className={`py-20 px-4 ${isDarkMode ? 'bg-slate-800/50' : 'bg-white'}`}>
                 <div className="max-w-6xl mx-auto">
                     <motion.h2 
-                        className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-emerald-500 to-amber-500 bg-clip-text text-transparent"
+                        className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -424,24 +425,24 @@ const Portfolio = () => {
                             viewport={{ once: true }}
                         >
                             <div className="relative">
-                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-2xl blur opacity-75"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl blur opacity-75"></div>
                                 <div className={`relative ${isDarkMode ? 'bg-slate-900' : 'bg-white'} rounded-2xl p-8 text-center`}>
-                                    <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-emerald-500">
+                                    <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-500">
                                         <img 
-                                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                                            src="/professional-photo.jpg" 
                                             alt="Jagdish Everest - Professional Photo" 
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
                                     <h3 className="text-2xl font-bold mb-2">Jagdish Everest</h3>
-                                    <p className="text-emerald-500 font-semibold mb-4">Full Stack Developer</p>
-                                    <div className={`space-y-2 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                    <p className="text-cyan-500 font-semibold mb-4">Full Stack Developer</p>
+                                    <div className={`space-y-2 text-sm ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
                                         <div className="flex items-center justify-center">
-                                            <FaGraduationCap className="mr-2 text-emerald-500" />
+                                            <FaGraduationCap className="mr-2 text-cyan-500" />
                                             <span>B.E. Computer Science</span>
                                         </div>
                                         <div className="flex items-center justify-center">
-                                            <FaCalendarAlt className="mr-2 text-amber-500" />
+                                            <FaCalendarAlt className="mr-2 text-purple-500" />
                                             <span>Graduating 2026</span>
                                         </div>
                                         <div className="flex items-center justify-center">
@@ -463,7 +464,7 @@ const Portfolio = () => {
                         >
                             <div>
                                 <h3 className="text-2xl font-bold mb-4">Hello! I'm Jagdish</h3>
-                                <div className={`space-y-4 text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                <div className={`space-y-4 text-lg leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
                                     <p>
                                         I'm a passionate Computer Science student at R.M.K. Engineering College, set to graduate in 2026. 
                                         My journey in technology is driven by an insatiable curiosity for building secure, scalable applications 
@@ -490,14 +491,14 @@ const Portfolio = () => {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-emerald-500 to-amber-500 bg-clip-text text-transparent">
+                        <h3 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                             Technical Skills
                         </h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                             {skills.map((skill, index) => (
                                 <motion.div
                                     key={skill.name}
-                                    className={`${isDarkMode ? 'bg-slate-800/50 hover:bg-slate-800' : 'bg-gray-100 hover:bg-white'} p-6 rounded-xl text-center transition-all duration-300 hover:scale-105 border ${isDarkMode ? 'border-slate-700 hover:border-emerald-500/50' : 'border-gray-200 hover:border-emerald-500/50'}`}
+                                    className={`${isDarkMode ? 'bg-slate-800/50 hover:bg-slate-800' : 'bg-gray-50 hover:bg-white shadow-md'} p-6 rounded-xl text-center transition-all duration-300 hover:scale-105 border ${isDarkMode ? 'border-slate-700 hover:border-cyan-500/50' : 'border-gray-200 hover:border-cyan-500/50'}`}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3, delay: 0.1 * index }}
@@ -510,19 +511,161 @@ const Portfolio = () => {
                                     <h4 className="font-semibold mb-3">{skill.name}</h4>
                                     <div className={`w-full ${isDarkMode ? 'bg-slate-700' : 'bg-gray-200'} rounded-full h-2`}>
                                         <motion.div 
-                                            className="bg-gradient-to-r from-emerald-500 to-amber-500 h-2 rounded-full"
+                                            className="bg-gradient-to-r from-cyan-400 to-purple-500 h-2 rounded-full"
                                             initial={{ width: 0 }}
                                             whileInView={{ width: `${skill.level}%` }}
                                             transition={{ duration: 1, delay: 0.2 + 0.1 * index }}
                                             viewport={{ once: true }}
                                         />
                                     </div>
-                                    <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mt-2 block`}>
+                                    <span className={`text-sm ${isDarkMode ? 'text-gray-700' : 'text-gray-800'} mt-2 block`}>
                                         {skill.level}%
                                     </span>
                                 </motion.div>
                             ))}
                         </div>
+                    </motion.div>
+
+                    {/* Education Timeline */}
+                    <motion.div 
+                        className="mt-20"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h3 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                            My Journey
+                        </h3>
+                        <div className="space-y-8 max-w-4xl mx-auto">
+                            {/* Education & Experience Timeline */}
+                            <div className="relative">
+                                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 to-purple-500"></div>
+                                
+                                {/* Higher Secondary Education */}
+                                <motion.div 
+                                    className="relative flex gap-6 mb-8"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <FaGraduationCap className="text-white text-xl" />
+                                    </div>
+                                    <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
+                                        <div className="flex justify-between items-start mb-2">
+                                            <h4 className="text-xl font-bold">Higher Secondary Education</h4>
+                                            <span className="text-cyan-400 font-semibold">2020 - 2022</span>
+                                        </div>
+                                        <p className="text-purple-400 font-semibold mb-1">Computer Science Stream</p>
+                                        <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Chennai, India</p>
+                                        <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                            Completed higher secondary education with focus on Mathematics, Physics, Chemistry, and Computer Science. 
+                                            Developed strong analytical and problem-solving skills that laid the foundation for my engineering journey.
+                                        </p>
+                                    </div>
+                                </motion.div>
+
+                                {/* College - B.E. Computer Science */}
+                                <motion.div 
+                                    className="relative flex gap-6 mb-8"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.2 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <FaCode className="text-white text-xl" />
+                                    </div>
+                                    <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
+                                        <div className="flex justify-between items-start mb-2">
+                                            <h4 className="text-xl font-bold">Bachelor of Engineering - Computer Science</h4>
+                                            <span className="text-purple-400 font-semibold">2022 - 2026</span>
+                                        </div>
+                                        <p className="text-cyan-400 font-semibold mb-1">R.M.K. Engineering College</p>
+                                        <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Chennai, India</p>
+                                        <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                            Currently pursuing B.E. in Computer Science with specialization in software development, 
+                                            data structures, algorithms, and cybersecurity. Actively involved in coding competitions and technical projects.
+                                        </p>
+                                    </div>
+                                </motion.div>
+
+                                {/* Full Stack Development Journey */}
+                                <motion.div 
+                                    className="relative flex gap-6 mb-8"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.4 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <FaDatabase className="text-white text-xl" />
+                                    </div>
+                                    <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
+                                        <div className="flex justify-between items-start mb-2">
+                                            <h4 className="text-xl font-bold">Full Stack Development Mastery</h4>
+                                            <span className="text-cyan-400 font-semibold">2023 - Present</span>
+                                        </div>
+                                        <p className="text-purple-400 font-semibold mb-1">Self-Learning & Professional Development</p>
+                                        <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Personal Growth Journey</p>
+                                        <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                            Mastering modern full-stack technologies including Java Spring Boot, React, Node.js, and database systems. 
+                                            Building secure, scalable applications while exploring advanced cybersecurity concepts and best practices.
+                                        </p>
+                                    </div>
+                                </motion.div>
+
+                                {/* Internship & Professional Experience */}
+                                <motion.div 
+                                    className="relative flex gap-6"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.6 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <FaShieldAlt className="text-white text-xl" />
+                                    </div>
+                                    <div className={`flex-1 ${isDarkMode ? 'bg-slate-800/30' : 'bg-white'} p-6 rounded-xl border ${isDarkMode ? 'border-slate-700' : 'border-gray-200'}`}>
+                                        <div className="flex justify-between items-start mb-2">
+                                            <h4 className="text-xl font-bold">Cybersecurity & Development Focus</h4>
+                                            <span className="text-purple-400 font-semibold">2024 - Present</span>
+                                        </div>
+                                        <p className="text-cyan-400 font-semibold mb-1">Security-First Development Approach</p>
+                                        <p className={`${isDarkMode ? 'text-gray-700' : 'text-gray-800'} text-sm mb-3`}>Continuous Learning & Application</p>
+                                        <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                            Specializing in secure application development, vulnerability assessment, and implementing robust security protocols. 
+                                            Working on real-world projects that combine development skills with cybersecurity best practices.
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </div>
+
+                        {/* Resume Download Section */}
+                        <motion.div 
+                            className="mt-16 text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h4 className="text-2xl font-bold mb-6">Want to know more about my journey?</h4>
+                            <a
+                                href="/Jagdish-Resume.pdf"
+                                download="Jagdish-Everest-Resume.pdf"
+                                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
+                            >
+                                <FaFileCode className="text-xl group-hover:rotate-12 transition-transform" />
+                                Download My Resume
+                                <FaPaperPlane className="text-lg group-hover:translate-x-1 transition-transform" />
+                            </a>
+                            <p className={`mt-4 text-sm ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
+                                Get detailed information about my education, skills, projects, and experience
+                            </p>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
@@ -531,7 +674,7 @@ const Portfolio = () => {
             <section id="projects" ref={projectsRef} className="py-20 px-4">
                 <div className="max-w-6xl mx-auto">
                     <motion.h2 
-                        className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-emerald-500 to-amber-500 bg-clip-text text-transparent"
+                        className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -540,7 +683,7 @@ const Portfolio = () => {
                         Featured Projects
                     </motion.h2>
                     <motion.p 
-                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}
+                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -567,28 +710,28 @@ const Portfolio = () => {
                                     {project.status && (
                                         <span className={`px-3 py-1 text-xs rounded-full font-medium ${
                                             project.status === 'Active' 
-                                                ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                                                : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                                                ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                                                : 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
                                         }`}>
                                             {project.status}
                                         </span>
                                     )}
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3 group-hover:text-emerald-500 transition-colors">
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-500 transition-colors">
                                     {project.name}
                                 </h3>
-                                <p className={`mb-4 leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                <p className={`mb-4 leading-relaxed ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
                                     {project.description}
                                 </p>
 
                                 <div className="mb-4">
-                                    <p className="font-semibold text-emerald-500 mb-2">Technologies:</p>
+                                    <p className="font-semibold text-cyan-500 mb-2">Technologies:</p>
                                     <div className="flex flex-wrap gap-2">
                                         {project.technologies.map((tech, techIndex) => (
                                             <span 
                                                 key={techIndex}
-                                                className={`px-3 py-1 rounded-full text-xs ${isDarkMode ? 'bg-slate-700/50 text-gray-300 border border-slate-600' : 'bg-gray-100 text-gray-700 border border-gray-200'}`}
+                                                className={`px-3 py-1 rounded-full text-xs ${isDarkMode ? 'bg-slate-700/50 text-gray-300 border border-slate-600' : 'bg-gray-50 text-gray-700 border border-gray-200'}`}
                                             >
                                                 {tech}
                                             </span>
@@ -597,11 +740,11 @@ const Portfolio = () => {
                                 </div>
 
                                 <div className="mb-6">
-                                    <p className="font-semibold text-amber-500 mb-2">Key Features:</p>
-                                    <ul className={`text-sm space-y-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                    <p className="font-semibold text-purple-500 mb-2">Key Features:</p>
+                                    <ul className={`text-sm space-y-1 ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
                                         {project.features.map((feature, featureIndex) => (
                                             <li key={featureIndex} className="flex items-start">
-                                                <span className="text-emerald-500 mr-2 mt-1">•</span>
+                                                <span className="text-cyan-500 mr-2 mt-1">•</span>
                                                 {feature}
                                             </li>
                                         ))}
@@ -612,7 +755,7 @@ const Portfolio = () => {
                                     href={project.githubLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-amber-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
@@ -629,7 +772,7 @@ const Portfolio = () => {
             <section id="achievements" ref={achievementsRef} className={`py-20 px-4 ${isDarkMode ? 'bg-slate-800/50' : 'bg-white'}`}>
                 <div className="max-w-6xl mx-auto">
                     <motion.h2 
-                        className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-emerald-500 to-amber-500 bg-clip-text text-transparent"
+                        className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -638,7 +781,7 @@ const Portfolio = () => {
                         Certifications & Achievements
                     </motion.h2>
                     <motion.p 
-                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}
+                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -661,7 +804,7 @@ const Portfolio = () => {
                                     <div className="text-4xl">
                                         {cert.icon}
                                     </div>
-                                    <span className="px-3 py-1 text-xs rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                                    <span className="px-3 py-1 text-xs rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
                                         {cert.date}
                                     </span>
                                 </div>
@@ -669,8 +812,8 @@ const Portfolio = () => {
                                 <h4 className="text-lg font-bold mb-2 leading-tight">
                                     {cert.title}
                                 </h4>
-                                <p className="text-emerald-500 font-semibold mb-3">{cert.issuer}</p>
-                                <p className={`text-sm mb-4 leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                <p className="text-cyan-500 font-semibold mb-3">{cert.issuer}</p>
+                                <p className={`text-sm mb-4 leading-relaxed ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
                                     {cert.description}
                                 </p>
 
@@ -680,7 +823,7 @@ const Portfolio = () => {
                                         {cert.skills.map((skill, skillIndex) => (
                                             <span 
                                                 key={skillIndex}
-                                                className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-700/50 text-gray-300 border border-slate-600' : 'bg-gray-100 text-gray-700 border border-gray-200'}`}
+                                                className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-700/50 text-gray-300 border border-slate-600' : 'bg-gray-50 text-gray-700 border border-gray-200'}`}
                                             >
                                                 {skill}
                                             </span>
@@ -689,7 +832,7 @@ const Portfolio = () => {
                                 </div>
 
                                 <div className={`border-t pt-4 ${isDarkMode ? 'border-slate-600' : 'border-gray-200'}`}>
-                                    <p className={`text-xs mb-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                    <p className={`text-xs mb-2 ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>
                                         Credential ID: <span className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>{cert.credentialId}</span>
                                     </p>
                                 </div>
@@ -703,7 +846,7 @@ const Portfolio = () => {
             <section id="contact" ref={contactRef} className="py-20 px-4">
                 <div className="max-w-6xl mx-auto">
                     <motion.h2 
-                        className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-emerald-500 to-amber-500 bg-clip-text text-transparent"
+                        className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
@@ -712,7 +855,7 @@ const Portfolio = () => {
                         Get In Touch
                     </motion.h2>
                     <motion.p 
-                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}
+                        className={`text-center mb-16 max-w-2xl mx-auto ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -735,14 +878,14 @@ const Portfolio = () => {
                             <div className="space-y-6">
                                 {[
                                     {
-                                        icon: <FaPhone className="text-emerald-500 text-xl" />,
+                                        icon: <FaPhone className="text-cyan-500 text-xl" />,
                                         title: "Phone",
                                         value: "+91 8778900128",
                                         href: "tel:+918778900128",
                                         description: "Available Mon - Fri, 9am - 6pm IST"
                                     },
                                     {
-                                        icon: <FaEnvelope className="text-amber-500 text-xl" />,
+                                        icon: <FaEnvelope className="text-purple-500 text-xl" />,
                                         title: "Email", 
                                         value: "Jagdisheverest23@gmail.com",
                                         href: "mailto:Jagdisheverest23@gmail.com",
@@ -770,14 +913,14 @@ const Portfolio = () => {
                                                 {item.href ? (
                                                     <a 
                                                         href={item.href} 
-                                                        className="text-emerald-500 hover:text-emerald-400 transition-colors font-medium block"
+                                                        className="text-cyan-500 hover:text-cyan-400 transition-colors font-medium block"
                                                     >
                                                         {item.value}
                                                     </a>
                                                 ) : (
-                                                    <span className="text-emerald-500 font-medium block">{item.value}</span>
+                                                    <span className="text-cyan-500 font-medium block">{item.value}</span>
                                                 )}
-                                                <p className={`text-sm mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{item.description}</p>
+                                                <p className={`text-sm mt-1 ${isDarkMode ? 'text-gray-700' : 'text-gray-800'}`}>{item.description}</p>
                                             </div>
                                         </div>
                                     </motion.div>
@@ -798,7 +941,7 @@ const Portfolio = () => {
                                             icon: <FaGithub className="text-2xl" />,
                                             name: "GitHub",
                                             url: "https://github.com/jagdisheverest2004",
-                                            color: isDarkMode ? "text-gray-400 hover:text-gray-300" : "text-gray-600 hover:text-gray-800"
+                                            color: isDarkMode ? "text-gray-700 hover:text-gray-300" : "text-gray-800 hover:text-gray-800"
                                         }
                                     ].map((social, index) => (
                                         <motion.a
@@ -806,7 +949,7 @@ const Portfolio = () => {
                                             href={social.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`p-4 rounded-xl ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-gray-100 border-gray-200 hover:bg-white'} border transition-all duration-300 ${social.color}`}
+                                            className={`p-4 rounded-xl ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-gray-50 border-gray-200 hover:bg-white shadow-md'} border transition-all duration-300 ${social.color}`}
                                             whileHover={{ scale: 1.1, y: -2 }}
                                             whileTap={{ scale: 0.95 }}
                                         >
@@ -831,7 +974,7 @@ const Portfolio = () => {
                                 <motion.div 
                                     className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
                                         submitStatus === 'success' 
-                                            ? 'bg-emerald-500/20 border border-emerald-500/30 text-emerald-400' 
+                                            ? 'bg-cyan-500/20 border border-cyan-500/30 text-cyan-400' 
                                             : 'bg-red-500/20 border border-red-500/30 text-red-400'
                                     }`}
                                     initial={{ opacity: 0, y: -20 }}
@@ -848,7 +991,7 @@ const Portfolio = () => {
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
                                     <label className="block font-semibold mb-2" htmlFor="name">
-                                        <FaUser className="inline mr-2 text-emerald-500" />
+                                        <FaUser className="inline mr-2 text-cyan-500" />
                                         Name
                                     </label>
                                     <input
@@ -858,14 +1001,14 @@ const Portfolio = () => {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
-                                        className={`w-full px-4 py-3 ${isDarkMode ? 'bg-slate-700/50 border-slate-600 text-white placeholder-gray-400 focus:border-emerald-500 focus:bg-slate-700' : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:border-emerald-500 focus:bg-white'} border rounded-lg focus:outline-none transition-all duration-300`}
+                                        className={`w-full px-4 py-3 ${isDarkMode ? 'bg-slate-700/50 border-slate-600 text-white placeholder-gray-400 focus:border-cyan-500 focus:bg-slate-700' : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:border-cyan-500 focus:bg-white'} border rounded-lg focus:outline-none transition-all duration-300`}
                                         placeholder="Your full name"
                                     />
                                 </div>
 
                                 <div>
                                     <label className="block font-semibold mb-2" htmlFor="email">
-                                        <FaEnvelope className="inline mr-2 text-amber-500" />
+                                        <FaEnvelope className="inline mr-2 text-purple-500" />
                                         Email
                                     </label>
                                     <input
@@ -875,7 +1018,7 @@ const Portfolio = () => {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         required
-                                        className={`w-full px-4 py-3 ${isDarkMode ? 'bg-slate-700/50 border-slate-600 text-white placeholder-gray-400 focus:border-emerald-500 focus:bg-slate-700' : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:border-emerald-500 focus:bg-white'} border rounded-lg focus:outline-none transition-all duration-300`}
+                                        className={`w-full px-4 py-3 ${isDarkMode ? 'bg-slate-700/50 border-slate-600 text-white placeholder-gray-400 focus:border-cyan-500 focus:bg-slate-700' : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:border-cyan-500 focus:bg-white'} border rounded-lg focus:outline-none transition-all duration-300`}
                                         placeholder="your.email@example.com"
                                     />
                                 </div>
@@ -892,7 +1035,7 @@ const Portfolio = () => {
                                         onChange={handleInputChange}
                                         required
                                         rows={6}
-                                        className={`w-full px-4 py-3 ${isDarkMode ? 'bg-slate-700/50 border-slate-600 text-white placeholder-gray-400 focus:border-emerald-500 focus:bg-slate-700' : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:border-emerald-500 focus:bg-white'} border rounded-lg focus:outline-none transition-all duration-300 resize-none`}
+                                        className={`w-full px-4 py-3 ${isDarkMode ? 'bg-slate-700/50 border-slate-600 text-white placeholder-gray-400 focus:border-cyan-500 focus:bg-slate-700' : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-500 focus:border-cyan-500 focus:bg-white'} border rounded-lg focus:outline-none transition-all duration-300 resize-none`}
                                         placeholder="Tell me about your project or just say hello!"
                                     />
                                 </div>
@@ -903,7 +1046,7 @@ const Portfolio = () => {
                                     className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-3 ${
                                         isLoading 
                                             ? isDarkMode ? 'bg-slate-600 text-slate-400 cursor-not-allowed' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                            : 'bg-gradient-to-r from-emerald-500 to-amber-500 text-white hover:shadow-lg'
+                                            : 'bg-gradient-to-r from-cyan-400 to-purple-500 text-white hover:shadow-lg'
                                     }`}
                                     whileHover={!isLoading ? { scale: 1.02 } : {}}
                                     whileTap={!isLoading ? { scale: 0.98 } : {}}
@@ -931,7 +1074,7 @@ const Portfolio = () => {
                 {showScrollTop && (
                     <motion.button
                         onClick={scrollToTop}
-                        className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-emerald-500 to-amber-500 text-white rounded-full shadow-lg hover:shadow-xl z-50"
+                        className="fixed bottom-8 right-8 p-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white rounded-full shadow-lg hover:shadow-xl z-50"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0 }}
@@ -944,9 +1087,9 @@ const Portfolio = () => {
             </AnimatePresence>
 
             {/* Footer */}
-            <footer className={`${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-gray-100 border-gray-200'} border-t py-8 px-4`}>
+            <footer className={`${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-gray-50 border-gray-200'} border-t py-8 px-4`}>
                 <div className="max-w-6xl mx-auto text-center">
-                    <p className={isDarkMode ? 'text-gray-400' : 'text-gray-600'}>
+                    <p className={isDarkMode ? 'text-gray-700' : 'text-gray-800'}>
                         © 2025 Jagdish Everest. Built with React, Tailwind CSS, and lots of ☕
                     </p>
                 </div>
