@@ -109,15 +109,16 @@ const Portfolio = () => {
 
         try {
             // Replace with your actual EmailJS credentials
-            const serviceId = 'service_your_id';
-            const templateId = 'template_your_id';
-            const publicKey = 'your_public_key';
+            const serviceId = 'service_g6c3h5f';
+            const templateId = 'template_ncmsr5q'; // You need to get this from EmailJS dashboard
+            const publicKey = 'hkMWfRopBVjpLoO4V';   // You need to get this from EmailJS dashboard
 
             const templateParams = {
                 from_name: formData.name,
                 from_email: formData.email,
                 message: formData.message,
-                to_name: 'Jagdish Everest'
+                to_name: 'Jagdish Everest',
+                reply_to: formData.email
             };
 
             await emailjs.send(serviceId, templateId, templateParams, publicKey);

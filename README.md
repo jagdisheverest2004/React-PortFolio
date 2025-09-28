@@ -1,4 +1,4 @@
-# 🚀 Jagdish Everest - Portfolio Website# React + Vite
+# 🚀 Jagdish Everest - Portfolio Website
 
 
 
