@@ -1,4 +1,4 @@
-import { FaCertificate, FaAward, FaCode, FaPython, FaJava, FaShieldAlt, FaCalendarAlt, FaExternalLinkAlt, FaUniversity, FaGraduationCap } from "react-icons/fa";
+import { FaCertificate, FaAward, FaCode, FaPython, FaJava, FaShieldAlt, FaCalendarAlt, FaExternalLinkAlt } from "react-icons/fa";
 
 function Achievements() {
     const certifications = [

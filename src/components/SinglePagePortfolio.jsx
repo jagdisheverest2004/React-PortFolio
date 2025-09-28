@@ -16,11 +16,8 @@ import {
     FaPython,
     FaShieldAlt,
     FaFileCode,
-    FaCertificate,
-    FaAward,
     FaGraduationCap,
     FaCalendarAlt,
-    FaExternalLinkAlt,
     FaPaperPlane,
     FaUser,
     FaComment,
@@ -63,10 +60,10 @@ const Portfolio = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setShowScrollTop(window.scrollY > 300);
+            setShowScrollTop(globalThis.scrollY > 300);
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        globalThis.addEventListener('scroll', handleScroll);
+        return () => globalThis.removeEventListener('scroll', handleScroll);
     }, []);
 
     useEffect(() => {
@@ -85,7 +82,7 @@ const Portfolio = () => {
     };
 
     const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        globalThis.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     // Typing animation for roles

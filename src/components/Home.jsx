@@ -50,8 +50,8 @@ function Home() {
                         key={i}
                         className="absolute w-2 h-2 bg-cyan-400/20 rounded-full"
                         animate={{
-                            x: [Math.random() * window.innerWidth, Math.random() * window.innerWidth],
-                            y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
+                            x: [Math.random() * globalThis.innerWidth, Math.random() * globalThis.innerWidth],
+                            y: [Math.random() * globalThis.innerHeight, Math.random() * globalThis.innerHeight],
                         }}
                         transition={{
                             duration: Math.random() * 10 + 10,

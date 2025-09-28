@@ -3,7 +3,6 @@ import {
     FaJava, 
     FaDatabase, 
     FaCode, 
-    FaTools, 
     FaGraduationCap, 
     FaCalendarAlt,
     FaMapMarkerAlt,
