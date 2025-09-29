@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FaPython, FaJava, FaShieldAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 

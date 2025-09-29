@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
     FaGithub,
     FaCode,
@@ -7,94 +8,27 @@ import {
 import {
     SiReact
 } from 'react-icons/si';
-import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import { animate, stagger } from 'animejs';
+import { motion } from 'framer-motion';
 
 
 function Projects({ isDarkMode, projectsRef }) {
     const projectsContainerRef = useRef(null);
 
     useEffect(() => {
-        // Card hover animations
-        const cards = document.querySelectorAll('.project-card');
-        
-        cards.forEach((card) => {
-            card.addEventListener('mouseenter', () => {
-                animate({
-                    targets: card,
-                    scale: 1.05,
-                    rotateY: 5,
-                    duration: 300,
-                    easing: 'easeOutQuad'
-                });
-                
-                // Animate the icon
-                const icon = card.querySelector('.project-icon');
-                if (icon) {
-                    animate({
-                        targets: icon,
-                        rotate: 360,
-                        scale: 1.2,
-                        duration: 500,
-                        easing: 'easeOutBounce'
-                    });
-                }
+        // Simple timeout to ensure cards are visible
+        const timer = setTimeout(() => {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+                // Add staggered animation delay for entrance
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) rotateX(0deg)';
+                }, index * 150);
             });
+        }, 100);
 
-            card.addEventListener('mouseleave', () => {
-                animate({
-                    targets: card,
-                    scale: 1,
-                    rotateY: 0,
-                    duration: 300,
-                    easing: 'easeOutQuad'
-                });
-                
-                const icon = card.querySelector('.project-icon');
-                if (icon) {
-                    animate({
-                        targets: icon,
-                        rotate: 0,
-                        scale: 1,
-                        duration: 300,
-                        easing: 'easeOutQuad'
-                    });
-                }
-            });
-        });
-
-        // Stagger animation for cards when they come into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animate({
-                        targets: '.project-card',
-                        opacity: [0, 1],
-                        translateY: [50, 0],
-                        rotateX: [30, 0],
-                        duration: 800,
-                        delay: stagger(150),
-                        easing: 'easeOutExpo'
-                    });
-                }
-            });
-        }, { threshold: 0.1 });
-
-        const currentRef = projectsContainerRef.current;
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            cards.forEach(card => {
-                card.removeEventListener('mouseenter', () => {});
-                card.removeEventListener('mouseleave', () => {});
-            });
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
+        return () => clearTimeout(timer);
     }, []);
 
     const projects = [
@@ -211,7 +145,7 @@ function Projects({ isDarkMode, projectsRef }) {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className={`project-card ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-white border-gray-200 hover:bg-gray-50'} border rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 group flex flex-col h-[600px] opacity-0`}
+                            className={`project-card ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-white border-gray-200 hover:bg-gray-50'} border rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 group flex flex-col h-[600px]`}
                             style={{ 
                                 perspective: '1000px',
                                 transformStyle: 'preserve-3d'

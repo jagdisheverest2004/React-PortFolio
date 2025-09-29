@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FaSun, FaMoon} from 'react-icons/fa';
 import { motion } from 'framer-motion';
 

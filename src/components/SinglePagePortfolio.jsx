@@ -1,4 +1,5 @@
-// src/components/SinglePagePortfolio.jsx
+/* eslint-disable no-unused-vars */
+
 
 import { useState, useEffect, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
@@ -12,11 +13,10 @@ import Projects from './Projects';
 import Achievements from './Achievements';
 import LoadingScreen from './LoadingScreen';
 import AnimatedBackground from './AnimatedBackground';
-import { useTheme } from '../contexts/ThemeContext'; // We still need this hook
+import { useTheme } from '../contexts/ThemeContext';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 
-// REMOVE the wrapper. This is now your main component.
 const SinglePagePortfolio = () => {
     const { isDarkMode, toggleTheme } = useTheme();
     const [activeSection, setActiveSection] = useState('home');

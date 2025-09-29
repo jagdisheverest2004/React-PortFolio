@@ -39,10 +39,46 @@ body {
 /* Custom animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-100px) scale(1.2) rotate(90deg);
+    opacity: 0.7;
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-50px) scale(0.8) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-80px) scale(1.1) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes letter-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotateX(90deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-10px) rotateX(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
   }
 }
 
@@ -69,7 +105,7 @@ body {
 
 /* Utility classes */
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .animate-glow {
@@ -79,6 +115,44 @@ body {
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient-shift 3s ease infinite;
+}
+
+.animate-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-appear 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(50px) rotateX(30deg);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Project card hover effects */
+.project-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover .project-icon {
+  transform: rotate(360deg) scale(1.2);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.project-icon {
+  transition: transform 0.3s ease;
 }
 
 /* Enhanced glassmorphism effect */

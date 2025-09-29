@@ -1,33 +1,20 @@
 import { useEffect, useRef } from 'react';
-import { animate, stagger } from 'animejs';
 
 function AnimatedBackground() {
     const backgroundRef = useRef(null);
 
     useEffect(() => {
-        // Floating orbs animation
-        animate({
-            targets: '.floating-orb',
-            translateY: [0, -100, 0],
-            translateX: [0, 50, -30, 0],
-            scale: [1, 1.2, 0.8, 1],
-            rotate: [0, 180, 360],
-            opacity: [0.3, 0.7, 0.4, 0.6],
-            duration: 8000,
-            loop: true,
-            easing: 'easeInOutSine',
-            delay: stagger(1000)
+        // Use CSS animations instead of anime.js for now
+        const orbs = document.querySelectorAll('.floating-orb');
+        orbs.forEach((orb, index) => {
+            orb.style.animationDelay = `${index * 1000}ms`;
+            orb.classList.add('animate-float');
         });
 
-        // Grid lines animation
-        animate({
-            targets: '.grid-line',
-            opacity: [0.1, 0.3, 0.1],
-            strokeDashoffset: [0, 100],
-            duration: 4000,
-            loop: true,
-            easing: 'easeInOutQuad',
-            delay: stagger(200)
+        const gridLines = document.querySelectorAll('.grid-line');
+        gridLines.forEach((line, index) => {
+            line.style.animationDelay = `${index * 200}ms`;
+            line.classList.add('animate-pulse');
         });
     }, []);
 
