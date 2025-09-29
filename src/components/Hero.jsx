@@ -1,17 +1,109 @@
 import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { animate, stagger } from 'animejs';
 
 function Hero({isDarkMode, scrollToSection, homeRef, displayText}) {
+    const heroTextRef = useRef(null);
+    const particlesRef = useRef(null);
+    const backgroundRef = useRef(null);
+
+    useEffect(() => {
+        // Simple letter animation for the main title
+        if (heroTextRef.current) {
+            const textWrapper = heroTextRef.current;
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            // Simple staggered animation without timeline
+            setTimeout(() => {
+                animate({
+                    targets: '.letter',
+                    scale: [0.3, 1],
+                    opacity: [0, 1],
+                    translateZ: 0,
+                    easing: "easeOutExpo",
+                    duration: 600,
+                    delay: stagger(70)
+                });
+            }, 300);
+        }
+
+        // Floating particles animation
+        if (particlesRef.current) {
+            animate({
+                targets: '.particle',
+                translateY: [-20, 20],
+                translateX: [-10, 10],
+                rotate: [0, 360],
+                scale: [0.8, 1.2],
+                opacity: [0.3, 0.8],
+                duration: 3000,
+                direction: 'alternate',
+                loop: true,
+                easing: 'easeInOutSine',
+                delay: stagger(200)
+            });
+        }
+
+        // Background gradient animation
+        if (backgroundRef.current) {
+            animate({
+                targets: backgroundRef.current,
+                background: [
+                    'linear-gradient(45deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))',
+                    'linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1))'
+                ],
+                duration: 4000,
+                direction: 'alternate',
+                loop: true,
+                easing: 'easeInOutQuad'
+            });
+        }
+    }, []);
 
     return(
-        <section id="home" ref={homeRef} className="min-h-screen flex items-center justify-center pt-16 px-4">
-                <div className="max-w-6xl mx-auto text-center">
+        <section id="home" ref={homeRef} className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden">
+            {/* Animated Background */}
+            <div 
+                ref={backgroundRef}
+                className="absolute inset-0 opacity-50"
+                style={{
+                    background: 'linear-gradient(45deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))'
+                }}
+            />
+            
+            {/* Floating Particles */}
+            <div ref={particlesRef} className="absolute inset-0 overflow-hidden pointer-events-none">
+                {[...Array(15)].map((_, i) => (
+                    <div
+                        key={i}
+                        className="particle absolute w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
+                        style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                        }}
+                    />
+                ))}
+            </div>
+
+            {/* Geometric shapes */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-20 left-10 w-20 h-20 border-2 border-cyan-400/30 rotate-45 animate-pulse" />
+                <div className="absolute bottom-20 right-10 w-16 h-16 border-2 border-purple-400/30 rounded-full animate-bounce" />
+                <div className="absolute top-1/2 left-20 w-12 h-12 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 rotate-12 animate-pulse" />
+            </div>
+
+                <div className="max-w-6xl mx-auto text-center relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         className="space-y-6"
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                        <h1 
+                            ref={heroTextRef}
+                            className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent leading-tight py-4"
+                            style={{ lineHeight: '1.1', paddingBottom: '0.5rem' }}
+                        >
                             Jagdish Everest
                         </h1>
                         

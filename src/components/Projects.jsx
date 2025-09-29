@@ -8,9 +8,94 @@ import {
     SiReact
 } from 'react-icons/si';
 import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { animate, stagger } from 'animejs';
 
 
 function Projects({ isDarkMode, projectsRef }) {
+    const projectsContainerRef = useRef(null);
+
+    useEffect(() => {
+        // Card hover animations
+        const cards = document.querySelectorAll('.project-card');
+        
+        cards.forEach((card) => {
+            card.addEventListener('mouseenter', () => {
+                animate({
+                    targets: card,
+                    scale: 1.05,
+                    rotateY: 5,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+                
+                // Animate the icon
+                const icon = card.querySelector('.project-icon');
+                if (icon) {
+                    animate({
+                        targets: icon,
+                        rotate: 360,
+                        scale: 1.2,
+                        duration: 500,
+                        easing: 'easeOutBounce'
+                    });
+                }
+            });
+
+            card.addEventListener('mouseleave', () => {
+                animate({
+                    targets: card,
+                    scale: 1,
+                    rotateY: 0,
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+                
+                const icon = card.querySelector('.project-icon');
+                if (icon) {
+                    animate({
+                        targets: icon,
+                        rotate: 0,
+                        scale: 1,
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                }
+            });
+        });
+
+        // Stagger animation for cards when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animate({
+                        targets: '.project-card',
+                        opacity: [0, 1],
+                        translateY: [50, 0],
+                        rotateX: [30, 0],
+                        duration: 800,
+                        delay: stagger(150),
+                        easing: 'easeOutExpo'
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const currentRef = projectsContainerRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            cards.forEach(card => {
+                card.removeEventListener('mouseenter', () => {});
+                card.removeEventListener('mouseleave', () => {});
+            });
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, []);
 
     const projects = [
         {
@@ -122,18 +207,18 @@ function Projects({ isDarkMode, projectsRef }) {
                     cybersecurity, and modern web technologies.
                 </motion.p>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div ref={projectsContainerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            className={`${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-white border-gray-200 hover:bg-gray-50'} border rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 group hover:scale-105 flex flex-col h-[600px]`}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 * index }}
-                            viewport={{ once: true }}
+                            className={`project-card ${isDarkMode ? 'bg-slate-800/50 border-slate-700 hover:bg-slate-800' : 'bg-white border-gray-200 hover:bg-gray-50'} border rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 group flex flex-col h-[600px] opacity-0`}
+                            style={{ 
+                                perspective: '1000px',
+                                transformStyle: 'preserve-3d'
+                            }}
                         >
                             <div className="flex items-center justify-between mb-4">
-                                <div className="text-4xl">
+                                <div className="text-4xl project-icon">
                                     {project.icon}
                                 </div>
                                 {project.status && (
@@ -179,18 +264,16 @@ function Projects({ isDarkMode, projectsRef }) {
                                 </div>
                             </div>
 
-                            <motion.a
+                            <a
                                 href={project.githubLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
                             >
                                 <FaGithub className="mr-2" />
                                 View Code
-                            </motion.a>
-                        </motion.div>
+                            </a>
+                        </div>
                     ))}
                 </div>
             </div>
