@@ -74,7 +74,7 @@ function LoadingScreen({ onLoadingComplete }) {
             {/* Main content */}
             <div className="text-center z-10">
                 <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-8 tracking-wider animate-pulse">
-                    Jagdish Everest
+                    JAGDISH EVEREST
                 </h1>
                 
                 <div className="mb-6">

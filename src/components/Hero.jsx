@@ -96,7 +96,7 @@ function Hero({isDarkMode, scrollToSection, homeRef, displayText}) {
                             filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))'
                         }}
                     >
-                        Jagdish Everest
+                        JAGDISH EVEREST
                     </h1>
 
                     <div className="text-2xl md:text-3xl h-12 flex items-center justify-center">
