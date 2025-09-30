@@ -83,7 +83,7 @@ function Hero({isDarkMode, scrollToSection, homeRef, displayText}) {
                 >
                     <h1
                         ref={heroTextRef}
-                        className={`text-5xl md:text-7xl lg:text-8xl font-bold leading-tight py-4 ${
+                        className={`text-4xl md:text-7xl lg:text-8xl font-bold leading-tight py-4 ${
                             isDarkMode ? 'text-white' : 'text-gray-900'
                         }`}
                         style={{
