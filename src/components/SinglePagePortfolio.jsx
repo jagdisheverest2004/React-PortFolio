@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-
-
 import { useState, useEffect, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
